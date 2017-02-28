@@ -1,0 +1,7 @@
+User-agent: *
+Disallow: /admin/
+Disallow: /skin
+Disallow: /img
+Disallow: /css
+Disallow: /include
+Disallow: /install

@@ -1,0 +1,412 @@
+/****************
+ *    页面样式
+ ****************/
+
+/* =============
+     基本默认值
+   ============= */
+
+html {
+    font-size: 62.5%;  /* 10px */
+    color: #222;
+}
+
+::selection {
+    background-color: #b3d4fc;
+    text-shadow: none;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    list-style: none;
+}
+
+/* =============
+      工具样式
+   ============= */
+
+.center-block {
+    display:block;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.pull-right {
+    float: right !important;
+}
+
+.pull-left {
+    float: left !important;
+}
+
+.text-right {
+    text-align: right !important;
+}
+
+.text-left {
+    text-align:left !important;
+}
+
+.text-center {
+    text-align: center !important;
+}
+
+.hide {
+    display: none !important;
+}
+
+.show {
+    display: block !important;
+}
+
+.invisible {
+    visibility:hidden;
+}
+
+.text-hide {
+    font: 0/0 a;
+    color: transparent;
+    text-shadow: none;
+    background-color: transparent;
+    border: 0;
+}
+
+.clearfix:before,.clearfix:after {
+    content: ' ';
+    display: table;
+}
+/*
+.clearfix:before,.clearfix:after {
+    content: '.';
+    display: block;
+    height:0;
+    visibility:hidden;
+}
+*/
+
+.clearfix:after {
+    clear: both;
+}
+
+.clearfix{
+    zoom: 1;   /*或者height:1%;因为IE6不支持:after伪类，可以通过这两种方法来触发IE6的hasLayout属性。*/
+}
+
+
+/* =============
+   浏览器更新提示
+   ============= */
+.browserupgrade {
+    margin: 0;
+    padding: 1rem;    /* 10px */
+    background: #ccc;
+}
+
+/* ================
+   自定义页面基本样式
+   ================ */
+
+body {
+    font-size: 1.2rem;  /* 12px */
+    line-height: 1.5;
+    background-color: #fff;
+}
+
+a {
+    color: #666;
+    text-decoration: none;
+}
+
+a:hover, a:active {
+    color: #0ae;
+    text-decoration: underline;
+}
+
+
+.container{
+    min-width: 960px !important;
+    width: 100%;
+    position: relative;
+    box-sizing: border-box;
+    height: 540px;
+    margin: 30px auto;
+    overflow: hidden;
+    background: rgba(204,204,204,.3);
+}
+
+.slide_section{
+    max-width: 1200px;
+    margin: 50px auto;
+    position: relative;
+    z-index: 2;
+}
+
+.slide_title{
+    position: relative;
+    text-align: center;
+    height: 50px;
+    line-height: 50px;
+    width: 500px;
+    margin: 0 auto 50px;
+    font-size: 200%;
+}
+.title_line_left{
+    position: absolute;
+    top: 25px;
+    left: 0;
+    width: 72px;
+    height: 1px;
+    background-color: #ccc;
+}
+.title_line_right{
+    position: absolute;
+    right: 0;
+    top: 25px;
+    width: 72px;
+    height: 1px;
+    background-color: #ccc;
+}
+
+.slide_animate{
+    position: relative;
+    width: 100%;
+    height: 325px;
+    overflow: hidden;
+    margin-bottom: 30px;
+}
+.slide_animate>ul{
+    height: 100%;
+}
+.slide_animate>ul>li{
+    position: absolute;
+    display: inline-block;
+    width: 750px;
+    height: 300px;
+    transform-origin: 0 50%;
+    transition: all 300ms ease-out;
+}
+.slide_animate ul li a img {
+    width: 100%;
+    height:100%;
+}
+
+.slide_animate ul .p1{
+    z-index: 1;
+    opacity: 0;
+    transform: translate3d(-220px,0,0) scale(0.8);
+    -webkit-transform: translate3d(-220px,0,0) scale(0.8)
+}
+.slide_animate ul .p2{
+    z-index: 1;
+    opacity: .8;
+    transform: translate3d(0,0,0) scale(0.8);
+    -webkit-transform: translate3d(0,0,0) scale(0.8)
+}
+.slide_animate ul .p3{
+    z-index: 3;
+    opacity: 1;
+    transform: translate3d(220px,0,0) scale(1);
+    -webkit-transform: translate3d(220px,0,0) scale(1);
+}
+.slide_animate ul .p4{
+    z-index: 1;
+    opacity: .8;
+    transform: translate3d(600px,0,0) scale(0.8);
+    -webkit-transform: translate3d(600px,0,0) scale(0.8)
+    
+}
+.slide_animate ul .p5{
+    z-index: 1;
+    opacity: 0;
+    transform: translate3d(620px,0,0) scale(0.8);
+    -webkit-transform: translate3d(820px,0,0) scale(0.8)
+}
+.slide_switch{
+    width: 100%;
+    text-align: center;
+}
+.slide_switch a {
+    cursor: pointer;
+    display: inline-block;
+    width: 50px;
+    height: 5px;
+    background: rgba(21,21,21,.3);
+}
+.slide_switch_bg:hover{
+    background: rgba(21,21,21,.6);
+}
+.slide_switch .slide_switch_bg_current{
+    background: rgba(21,21,21,.9);
+}
+
+.slide_action{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.slide_action a {
+    position: absolute;
+    top:50%;
+    margin-top:-25px;
+    width: 70px;
+    height: 100px;
+    z-index: 2;
+    background-color: rgba(153,153,153,.4);
+}
+.slide_action a:hover{
+    background-color:rgba(49,194,124,.8);
+}
+
+.slide_action a i:last-child{
+    position: absolute;
+    top: 40%;
+    background-image:-webkit-image-set(url(https://y.gtimg.cn/mediastyle/yqq/img/icon_sprite.png) 1x,url(https://y.gtimg.cn/mediastyle/yqq/img/icon_sprite@2x.png) 2x);
+    width: 11px;
+    height: 18px;
+}
+
+.slide_action_left{
+    position: absolute;
+    width: 30%;
+    height: 100%;
+    left: 0;
+}
+.slide_action_left a{
+    left:-70px;
+    transition: transform .3s ease-in-out;
+}
+.slide_action_left a i:last-child{
+    left: 28px;
+    background-position: -180px 0;
+}
+
+.slide_action_right{
+    position: absolute;
+    width: 30%;
+    height: 100%;
+    right: 0;
+}
+.slide_action_right a{
+    right:-70px;
+    transition: transform .3s ease-in-out;
+}
+.slide_action_right a i:last-child{
+    right: 28px;
+    background-position: -160px 0;
+}
+.container:hover .slide_action_left a{
+    transform: translateX(70px);
+}
+.container:hover .slide_action_right a{
+    transform: translateX(-70px);
+}
+
+
+/*The Second Slide*/
+
+#container1{
+    height: 720px;
+    color: #fff;
+    background: url(../img/bg_1.jpg) no-repeat;
+}
+
+#container1 .slide_animate{
+    height: 420px;
+}
+
+#container1 .slide_animate>ul>li{
+    position: relative;
+}
+#container1 .slide_animate ul {
+    width: 4800px;
+}
+
+#container1 .slide_animate>ul>li{
+    width: 1200px;
+    height: 420px;
+    float: left;
+}
+
+#container1 .slide_animate .item {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+#container1 .slide_animate .item li{
+    height: 100%;
+    width: 300px;
+    float: left;
+}
+
+.play_item a{
+    position: relative;
+    display: block;
+    width: 300px !important;
+    height: 300px !important;
+    overflow: hidden;
+}
+.play_item a img{
+    transform: scale(1);
+    transition: transform,.8s;
+}
+.play_item a:hover img{
+    transform: scale(1.1);
+}
+
+.play_item a .item_mask{
+    display: block;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top:0;
+    left: 0;
+    background-color: #000;
+    opacity: 0;
+    transition: opacity,.5s;
+}
+.play_item a:hover .item_mask{
+    opacity: 0.3;
+}
+
+.play_btn {
+    display: block;
+    width: 70px;
+    height: 70px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-top: -35px;
+    margin-left: -35px;
+    cursor: pointer;
+    opacity: 0;
+    transform: scale(0.7);
+    transition-property: transform,opacity;
+    transition-duration: .5s;
+    background-image: image-set(url(https://y.gtimg.cn/mediastyle/yqq/img/cover_play.png) 1x,url(https://y.gtimg.cn/mediastyle/yqq/img/cover_play@2x.png) 2x);
+    background-image: -webkit-image-set(url(https://y.gtimg.cn/mediastyle/yqq/img/cover_play.png) 1x,url(https://y.gtimg.cn/mediastyle/yqq/img/cover_play@2x.png) 2x);
+}
+.play_item a:hover .play_btn{
+    opacity: 0.8;
+    transform: scale(1);
+}
+
+.play_item_info{
+    text-align: center;
+    margin-top: -16px;
+    height: 120px;
+    padding: 30px 10px;
+    background-color: rgba(0,0,0,.4);
+}
+.item>li:nth-child(odd)>.play_item_info{
+    background-color: rgba(0,0,0,.6);
+}
+.item>li:hover .play_item_info{
+    background-color: rgba(49,194,124,.8);
+}
